@@ -1,0 +1,50 @@
+{
+  "name": "ks-reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "tsc && concurrently --kill-others \"tsc -w\" \"nodemon ./dist/index.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jshint .",
+    "validate": "npm ls"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "config": "^1.20.4",
+    "ger": "0.0.98",
+    "ger_mysql_esm": "0.0.2",
+    "ger_rethinkdb_esm": "0.0.5",
+    "hoek": "^4.0.0",
+    "joi": "^8.0.5",
+    "karmasoc-util": "^1.5.4",
+    "knex": "^0.13.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.0",
+    "seneca": "3.3.0",
+    "seneca-amqp-transport": "2.1.0",
+    "source-map-support": "^0.4.16"
+  },
+  "devDependencies": {
+    "@types/knex": "^0.0.57",
+    "@types/lodash": "^4.14.43",
+    "@types/moment": "^2.13.0",
+    "@types/seneca": "^2.1.5",
+    "concurrently": "^3.1.0",
+    "jshint": "^2.9.1",
+    "precommit-hook": "^3.0.0",
+    "typescript": "^2.1.6"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
+}

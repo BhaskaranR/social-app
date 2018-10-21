@@ -1,0 +1,51 @@
+sudo: true
+
+services:  
+    - docker
+
+env:  
+    global:
+        - DOCKER_VERSION=1.11.2-0~trusty
+        - DOCKER_COMPOSE_VERSION=1.8.0
+        - IMAGE_NAME=karmasoc-web-server
+        - CLUSTER=karmasoc
+        - TASK_DEFINITION=web
+        - SERVICE=karmasoc-posts
+        - REMOTE_IMAGE_URL=karmasocio/karmasoc-posts
+        - secure: wJ50Kci5lJt3pgF2cNg0rPug/U/sm/9rWkZX/eIY89yfSAa8DaHWM3fCPfuEw1U95Kc6wRk36YA+f3NwL/wGbE6SVE0G+Va5FcH1Ni0kF3zGGkh67RDVXM4XlMWx2AN25kbP5DyUDHURkNNXEqDkjhJIizENuXLFKsRsa0jkZSeU3uzP8i0jH42JGLjEcqEsTUazXakfCbPsitXZCVliieHrU1AdElmfDsuzeROoOIiP1uDG7ggNu/PAmk+4MfJOafPiQuPjVe6fW7bY5RQUcZ0jkJh99fjGNpjo5SwOQ/VCs05X2hB+1AJY5a04+i/Cj5UbUOYK6Ksm0XV6+GlVQcK20ryyg9FCHvWOzwBx4mT5prWgFajV7zQTgJzo99cpwr9ZyulRyMxXqj53rIH+yDT87+byuFpTl+eD5GfZfDFrCmsak3M5rgNXFz14Ost2ByeyycnVAMCBytNtn8pMRZm5ukbND9lh28q7pvBw/Wy5lyL8mujxZ3xUas4bmre8YLfkZY760FSNiCXCeX3OviNnlTKdGlBVBG4WQLkC9NkA33qKnNSe1wQljLius05mJf+mwEtR7FczISOJ4xPIQHlX+HvU9omS6azZaZZJbHv7OsbLcmuxRVWQ4JjsnsK9KValTiF5BEyck1Kq87FxkvKfD6sKwuQD/oHcmdmaV88=
+        - secure: qp/H21F8EfQgl/cipJrU3vNGsnpEiqqPrCFMT3JvRrhTJWjE2qmCQ6tLUlHT8GJfR8j99XRZuS0QODtYOnn1Q7y413AsrkhNJL5TxTLO1H8Ec+Qozh6JpMt02sJuNfFfNeT1NO5kQN2xaPP4Ev73uMw1uNHZv+bZ4JWugvIP7hvp9u1TwWi0l7U8zs3WUMFq/zb58p09l3hzSOZ7HlyoQpGBlAMU4+jvOAr31ADxw4215rBX98sKHuftNZ5PDC6i9+rzgcKnxQQuNOfOr2vMN8jvOhuiRmr7/G1UH4oaTgN5GHtt7YVsQQT00uhF22aVwXEQGNiGXkNunu2L89A4yLY9nUkY1ZJ0hPob195gMNYFYtfQzTMjAqVXRGcYxaLk4+AlarnDdVlSRhDX0oU6JIrjDmk1va3B2Nvg3+g6vL+8vAFy96QwI8xlo15/FsgncjZthvRCmTFwO7Z0a7U/BGjzh/nY0EVdY0WieL1o3gxYCZuT4bi8tbluamqxCbRz107AfIsPQ3e2Cwd9o0M+F9Ggp6kYBxQT7FiU+ANE7yoYwMwGPizlp4pAc4nrKVHMG96X0B8630YzfTnGrGtY0sKlwZfxfsw7YMt88ALj1TI+G7AdEoeEyqf7QPUEQkZMgUZrKbyKfcBS6/nR9cUR9rYqVW+dSTk2o4NoAE+xkzs=
+        - secure: IsQVq1amYUnHmHJqsW+wULJSCjNpjmrkhj8SU58oQyb48Kv+TJqWgSyB77vltNXQtd4yxSaVhkXNSK0F9MHf5sIt3Ww/iLlTqFmHGQgM2O/TI88fYJXy70UhYG066GQpUMMztxt/qOg7DdQ3loeeNqmlx0udvwWRNy8vtJ9WgOHLmULfOPvpJuJOWRTfsLctDTt60NcuiVrIyBpqUOXwhZ0+pJ+YOUJhIppurN5+4cdy4iVlr5++Dthd4JolxGzczn0wl75LoWtZD8QuV8sa6c0+FwcY07t0Y30N9jhAQgGbUp/zqEFXmC3FW4t860boE/nibt0pYef9E9IGU8N0/AYmDxYYsAyUizuMhzXxweajNveP/ZDtdQzlmjTDFl4hYR6M65pDBeOgQQf5xzTTeu3y3+AVKwEaXw4LHX7cDY0xvGx6AR9IGDgLq79yYhJpAgmLG2HnRUAlZDiqw0NYYEpqUhtmAkjbQFagm0VKDv9L2FlaTERfkS2kaZe7TJr+H1ULsez4axRDBEKNwxse5tK8ZrPTtMj6slmugY+wdsWT1pPOXFOydpL2/DJlRiG9Je6JK5qFODxrSURLQXidEjHEL1f7UJsTYOi0annzLD7Ho3QW80sH/4D+a+vPd63CneNnZoKI2x0FmVZjo/sv+Qx0Y/YUU3xSjkVGxgDkKLw=
+        - secure: AFrYDba47WlXKaBV8S3PVH1Twxs5rOwU1YfLrxhmpN5Yt4Fky+sjIiIhWDEUkiU1faz1KNyLfEuVfxUuA17gRnQ6Lyrapk42p52SgOHyJ/pGowbvLY2WDAcYpAJDo9iR9/xtkHRjNZIbY7/8uYota/CoE9xeDRBiemhI+ib40Zle7+2faERaaCPQnWU3XtlIjvb5Uk7bv8nIhF9L08vuRZw7ReOUacfLw61zCcH4XWeTWy5StPHfupUggtQL2X84n6ETLO/3CuXyhF0Ktu5d/PRjC7gu6SlOTy5zIl3MTWYkDgVsU0PR8D48cXHPzyxK1/BH2YDPeIXqMj51Nf1LY683OQIEAzFXvoI7JtswHw9VOejJlvT+/Xjl50UkN43ca/ChSMLOdJTXQtTBr8Q+3DOJouBRu8ctGfM0Bl8adO0nODACA9+05oqvlRJ478LNzoKdLd+WNFQdR2xmlxT+SECmJnQ/hhFT/NT5YjuthfxtLeaexz94ae0Yp1P2UQ48zeb2CKq0481NPgdHpZoY7h4GZwZdRxP8I/R5GVDg+XOHr+AY7ekAyZ1f4dwixUAH3XpPilNzYejAk8CT7KxRfyyv3QN1qjqiDkYR9q4jbnodLfxs1IEw0Rjbky1cyW7q9onD5qoh9snOANERsUlnGU4iYh7NhUpqmBRRXduhMX8=
+        - secure: z281OqOpKSkCop4uoGsrX+foew2iQ0qMV0+WwanXCXLuRNUKAkXBOguo3gGPiApHSZm/grRuzGJYxCdEolywqNfUaAsS8MCVn2V5gCmioFs7Hr8N5u960iHjHVwk+RJd6Xk9FYmrJbAq4jh/9RKASRz3AVCD9KdtCJ9JtStzBf0gvcaqJuPr/IY6MHvY/LSkPn6JyCu9rGG5RYZWdClugQHyUCAEYvZohS2EsggtGchp9lXJ2DIcc2JG5LCT/B8NT8UQkbB4HxOBnAUc2pY6Ms7nz7vXninFm6Evhst+dcjdSDECDuaM3jBJ/d/3BEEZMxzL+8sRrdpYu5u06RRODwFS+5Dy+rKCmdEPpvofHZ7+kMZGN1iaFZZg8UuN2E08V5hPrsBeXrqC+xczfR8J5uyFoA+9RgaHNwQzxgEp8bS/4SS0Qtnm5LxXJDtnmh3trhSU//hK2YCIIdtbyrW0km4P2VmeBg9EbZxo2dOGDZ1eKsKjkY0Ef1mo9iD+UgqvVdgxi4ftC5BfpYNJhbDLKXHTbFXm5oE/ELHsarax731nOQdnoRBBukX2xpb34GAQDzU2/RpYi57XGIo/8bAicTnw9xAtukT9XufonxXRI76/EB5dpTD16A8+yA1gSV4hlr1ZoooLtPSG26H4X6CWck7OyogDlD/EGlyo8zCRH+U=
+        - secure: dFZns38SC9CABMhFKogmcGOMzLFbjGeKnp5PzdqNWQWNFVvP7120GeGBNX8qODFlA6gfcBS9Xh0nIjWCVM7oE9hQw5CbtFKTjblE5D5PJ1d1SOcj9Z161VeVeSYDTD5KKdMV9hMxqzHXcdWUSbYG47X1prDELhu6Bcr2WjS22UZ67W6a8Ij8dGdzvfC0Gnxq9O7IJeDPObsl0LhP7JijsbmcP8fu4ia2ajv6ikWy5nWJvmfMkIn7/TA1KpdH6uWKLdNySEs8uAtb7YJFs5exns1hwfOgOHDBwJSrdxmnhy8qtFliICrVJNqlfYIInik1BYDCjXebogLQ8ar3Ke1BUZootXe6Wg/sWpohZx9kPPn96yGpv1831eluh7QFUTPN/WdtGOnAu7gdA3hu/XcnUPLIkfApHrG/aapoJ/0ai2QjSoOOLzoiFuMpc4T/dyvkA5CjJg9qSWwywOTvSrRlrn2LdP841GMO5pwdK44TpwSsU7RG8UODtU5PWyanhTiUSik7RxkdGWoMEMoUDUUPfVXh0mqgZcZI1L0M2+GCNmbWh9j+QnDMsBznDXQGTlZx9arZYpr7Xw7kEU4PlyIH2NN3jX1WgbbxViqydllCG8V6zJ8NfaN1WMDBY521UUc2CzezYuuxyeOatYgwqTmhN2JVQoPC1NsmsyoDDnF0jII=
+before_install:  
+    - docker version
+    - docker-compose version
+    # list docker-engine versions
+    - apt-cache madison docker-engine
+    - sudo apt-get install jq
+
+    # upgrade docker-engine to specific version
+    - sudo apt-get -o Dpkg::Options::="--force-confnew" install --force-yes docker-engine=${DOCKER_VERSION}
+
+    # reinstall docker-compose at specific version
+    - sudo rm -f /usr/local/bin/docker-compose
+    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+    - chmod +x docker-compose
+    - sudo mv docker-compose /usr/local/bin
+    - git clone https://github.com/KarmaSoc/setup.git
+    - chmod +x setup/bin/docker_push.sh
+    - chmod +x setup/bin/ecs_deploy.sh
+    - chmod +x setup/bin/ecs_push
+
+before_script:
+  - docker-compose up --build
+
+script:  
+    - docker version
+    - docker-compose version
+    
+after_success:
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - setup/bin/docker_push.sh
+    - setup/bin/ecs_deploy.sh

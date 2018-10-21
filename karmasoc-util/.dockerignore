@@ -1,0 +1,18 @@
+.*
+node_modules/
+build/
+typings/
+logs/
+idea/
+.vscode
+.gitignore
+.git/
+.DS_Store/
+.idea .
+node_modules .
+build .
+typings .
+logs .
+idea .
+.git .
+.DS_Store .

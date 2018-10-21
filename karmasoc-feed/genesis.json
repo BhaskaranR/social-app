@@ -1,0 +1,76 @@
+{
+    "nonce": "0x0000000000000042",
+    "timestamp": "0x00",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "extraData": "",
+    "gasLimit": "0x2fefd8",
+    "difficulty": "0x20000",
+    "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "coinbase": "0x0000000000000000000000000000000000000000",
+    "alloc": {},
+    "config": {
+        "chainId": 15,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    }
+}
+
+
+1 yes
+2 ls
+3 yes
+4 clear
+5 sudo yum update
+6 sudo apt - get update
+7 pwd
+8 clear
+9 sudo apt - get install software - properties - common
+10 sudo add - apt - repository - y ppa: ethereum / ethereum
+11 sudo apt - get update
+12 sudo apt - get install ethereum
+13 geth--help
+14 pwd
+15 mkdir eth - dev
+16 cd eth - dev /
+    17 vi genesis.json
+18 geth--datadir~/eth-dev/
+init genesis.json
+19 cd..
+20 geth--datadir~/eth-dev/
+init genesis.json
+21 ls
+22 cp eth - dev / genesis.json.
+23 rm eth - dev / genesis.json
+24 ls
+25 geth--datadir~/eth-dev/
+init genesis.json
+26 cat genesis.json
+27 vi genesis.json
+28 geth--datadir~/eth-dev/
+init genesis.json
+29 vi genesis.json
+30 geth--datadir~/eth-dev/
+init genesis.json
+31 vi genesis.json
+32 geth--datadir~/eth-dev/
+init genesis.json
+33 vi genesis.json
+34 geth--datadir~/eth-dev/
+init genesis.json
+35 ll
+36 cd eth - dev /
+    37 ls
+38 cd geth /
+    39 ls
+40 cd chaindata /
+    41 ls
+42 cd..
+43 ls
+44 cd..
+geth--datadir~/eth-dev/--networkid 1337--verbosity 6--ipcdisable--rpc--port 30301--rpcport 8545--rpcaddr ec2 - 34 - 229 - 10 - 250. compute - 1. amazonaws.com console 2--etherbase '0x5DFE021F45f00Ae83B0aA963bE44A1310a782fCC' >> ~/eth-dev/eth.log
+46 ls
+47 vi genesis.json
+48 rm - rf genesis.json
+49 vi genesis.json
+50 history

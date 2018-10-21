@@ -1,0 +1,13 @@
+version: '2'
+services:
+# posts service
+   ks-business:
+        image: "karmasocio/ks-business"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocbz
+        hostname: karmasoc-business
+        ports:
+          - "44006:44006"
+        environment:
+            FILELOGLEVEL: error

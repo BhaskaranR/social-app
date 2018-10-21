@@ -1,0 +1,77 @@
+{
+    "apps": [
+        {
+            "name": "karmasoc-web-server",
+            "script": "./karmasoc-web-server/build/server.js",
+            "min_uptime": "5s",
+            "max_memory_restart": "350M",
+            "watch": false,
+            "exec_interpreter": "node",
+            "exec_mode": "fork",
+            "autorestart": true,
+            "vizion": false,
+            "log_date_format":"",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "env_docker": {
+                "NODE_ENV": "docker"
+            }
+        },
+        {
+            "name": "karmasoc-user",
+            "script": "./karmasoc-user/build/index.js",
+            "min_uptime": "5s",
+            "max_memory_restart": "150M",
+            "watch": false,
+            "exec_interpreter": "node",
+            "exec_mode": "fork",
+            "autorestart": true,
+            "vizion": false,
+            "log_date_format": "MM-DD-YYYY HH:mm Z",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "env_docker": {
+                "NODE_ENV": "docker"
+            }
+        },
+        ,
+        {
+            "name": "karmasoc-mediaserve",
+            "script": "./karmasoc-mediaserve/index.js",
+            "min_uptime": "5s",
+            "max_memory_restart": "150M",
+            "watch": false,
+            "exec_interpreter": "node",
+            "exec_mode": "fork",
+            "autorestart": true,
+            "vizion": false,
+            "log_date_format": "MM-DD-YYYY HH:mm Z",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "env_docker": {
+                "NODE_ENV": "docker"
+            }
+        },
+        {
+            "name": "karmasoc-posts",
+            "script": "./karmasoc-media-serve/index.js",
+            "min_uptime": "5s",
+            "max_memory_restart": "150M",
+            "watch": false,
+            "exec_interpreter": "node",
+            "exec_mode": "fork",
+            "autorestart": true,
+            "vizion": false,
+            "log_date_format": "MM-DD-YYYY HH:mm Z",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "env_docker": {
+                "NODE_ENV": "docker"
+            }
+        }
+    ]
+}

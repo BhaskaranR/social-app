@@ -1,0 +1,22 @@
+# karmasoc-notification
+FROM node:8.0.0
+
+ARG WORKSPACE=/usr/src/app/karmasoc-notification
+
+# Create app directory
+RUN mkdir -p $WORKSPACE
+RUN mkdir -p $WORKSPACE/config
+RUN mkdir -p $WORKSPACE/logs
+
+COPY ./process.json $WORKSPACE
+COPY ./config $WORKSPACE/config
+COPY ./karmasoc-notifications $WORKSPACE
+
+WORKDIR $WORKSPACE
+
+RUN npm install
+RUN npm run build
+
+EXPOSE 44004
+
+CMD node ./build/index.js

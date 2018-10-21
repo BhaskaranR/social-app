@@ -1,0 +1,35 @@
+{
+    "name": "karmasoc-util",
+    "version": "1.6.0",
+    "description": "Helper module for microservices used by karmasoc.com",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "jshint": "jshint --exclude ./node_modules ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/karmasoc/karmasoc-util.git"
+    },
+    "author": "r.bhaskarann",
+    "bugs": {
+        "url": "https://github.com/karmasoc/karmasoc-util/issues"
+    },
+    "homepage": "https://github.com/karmasoc/karmasoc-util#readme",
+    "dependencies": {
+        "bson-objectid": "^1.1.4",
+        "bunyan": "^1.8.0",
+        "bunyan-slack": "0.0.10",
+        "config": "^1.20.4",
+        "hoek": "^3.0.4",
+        "seneca-fire-and-forget": "^1.0.0",
+        "slack-node": "^0.1.7"
+    },
+    "devDependencies": {
+        "jshint": "^2.9.1",
+        "precommit-hook": "^3.0.0"
+    },
+    "pre-commit": [
+        "jshint"
+    ]
+}

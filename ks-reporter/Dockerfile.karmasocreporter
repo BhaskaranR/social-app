@@ -1,0 +1,21 @@
+# karmasoc-user
+FROM node:7.10.0
+
+# Create app directory
+RUN mkdir -p /usr/src/app/ks-reporter
+RUN mkdir -p /usr/src/app/ks-reporter/config
+RUN mkdir -p /usr/src/app/ks-reporter/logs
+
+COPY ./process.json /usr/src/app/ks-reporter
+COPY ./config /usr/src/app/ks-reporter/config
+COPY ./ks-reporter /usr/src/app/ks-reporter
+
+WORKDIR /usr/src/app/ks-reporter
+
+RUN npm install
+RUN npm run build
+
+EXPOSE 44008
+
+
+CMD ["node","./dist/src/index.js"]

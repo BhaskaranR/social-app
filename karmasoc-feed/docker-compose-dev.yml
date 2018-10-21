@@ -1,0 +1,10 @@
+version: '2'
+services:
+   karmasoc-feed:
+        image: "eurosasi/karmasoc-feed"
+        restart: always
+        hostname: karmasoc-feed
+        ports:
+           - "9999:9999"
+        environment:
+            FILELOGLEVEL: error

@@ -1,0 +1,13 @@
+version: '2'
+services:
+# posts service
+   ks-reporter:
+        image: "karmasocio/ks-reporter"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocreporter
+        hostname: karmasoc-reporter
+        ports:
+          - "44008:44008"
+        environment:
+            FILELOGLEVEL: error

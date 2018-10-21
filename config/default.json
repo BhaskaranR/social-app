@@ -1,0 +1,111 @@
+{
+    "env": {
+        "log": {
+            "pathFileLogFile": "info",
+            "fileLogLevel": "error",
+            "pathLogFileError": "logs"
+        },
+        "host": {
+            "karmasoc-mediaserve": "http://localhost",
+            "karmasoc-web": "http://localhost",
+            "karmasoc-web-server": "http://localhost",
+            "karmasoc-ecommerce": "http://localhost"
+        },
+        "hostUrlExternal": {
+            "karmasoc-web": "http://localhost:4201"
+        },
+        "port": {
+            "karmasoc-web-server": 8200,
+            "karmasoc-user": 44001,
+            "karmasoc-posts": 44002,
+            "karmasoc-email": 44003,
+            "karmasoc-notifications": 44004,
+            "karmasoc-feeds": 44005,
+            "karmasoc-business": 44006,
+            "karmasoc-messenger": 44007,
+            "karmasoc-mediaserve": 8300,
+            "karmasoc-web": 4201,
+            "karmasoc-ecommerce": 8500
+        }
+    },
+    "db": {
+        "karmasoc-user": {
+            "dbcon": "mongodb://yuvannoah:homodeus@107.21.77.208/admin"
+        },
+        "karmasoc-posts": {
+            "dbcon": "mongodb://yuvannoah:homodeus@107.21.77.208/admin"
+        },
+        "karmasoc-business": {
+            "dbcon": "mongodb://yuvannoah:homodeus@107.21.77.208/admin"
+        },
+        "karmasoc-messenger": {
+            "dbcon": "mongodb://yuvannoah:homodeus@107.21.77.208/admin"
+        },
+        "karmasoc-mediaserve": {
+            "dbcon": "mongodb://yuvannoah:homodeus@107.21.77.208/admin"
+        },
+        "karmasoc-reporter": {
+            "dbHost": "karmasoc.cm1k5qtpogsw.us-east-1.rds.amazonaws.com",
+            "dbPort": "3306",
+            "dbUserName": "karmasoc_dev",
+            "dbPassword": "karmasocmysql"
+        },
+        "karmasoc-pricing": {
+            "dbHost": "192.168.99.100",
+            "dbPort": "3306",
+            "dbUserName": "root",
+            "dbPassword": ""
+        }
+    },
+    "firebase": {
+        "fcmServerKey": "AAAA_W5-g24:APA91bFFiN076mzq_pDEh-FytxlV638k8WV8dMdvdQcvOCpqAeD7cNieK5vWBHxUUbkKZOxndXswKxCtyDdgJGFTrPq31jQo8XoKnbMFlCTjGZWlMPSVH5t2EZvxjavKbDLjT_jIztte"
+    },
+    "aws": {
+        "s3": {
+            "accessKeyId": "AKIAJ2P6VGBM4CYKAWIQ",
+            "accessKeySecret": "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"
+        }
+    },
+    "elasticSearchUrl": "192.168.99.100:9200",
+
+    "thumbor": {
+        "server": "https://karmasoc-alpha.com/karmaasset",
+        "key": ""
+    },
+    "slack": {
+        "slack": "https://hooks.slack.com/services/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",
+        "errorChannel": "https://hooks.slack.com/services/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",
+        "level": "error"
+    },
+    "auth": {
+        "google": {
+            "clientID": "1088480510830-s0ajnfod3p8ffs6g67tctgrv2phnf7q0.apps.googleusercontent.com",
+            "clientSecret": "PEK9fDhoNEywEDJ0mP5D0fp8",
+            "redirect_uri": "http://localhost:8200/users/googlelogin",
+            "urlhost": "http://localhost:3000/api/auth/google/callback"
+        },
+        "facebook": {
+            "clientID": "288302031570290",
+            "clientSecret": "6dd079e7bf8405354190851a279df754",
+            "redirect_uri": "http://localhost:8200/users/facebooklogin",
+            "urlhost": "http://localhost:3000/api/auth/facebook/callback"
+        }
+    },
+    "rabbitmqCloudUrl": "amqp://qzvgharp:MiCrnVgZ21boBQJjIVKUG6vqWgkFLKCP@orangutan.rmq.cloudamqp.com/qzvgharp",
+    "rabbitmq": {
+        "host": "a34e8dcbea26f11e78d6b128499c26dc-838488755.us-east-1.elb.amazonaws.com",
+        "port": "5672",
+        "username": "service",
+        "password": "service"
+    },
+    "mailGunApiKey": "key-37e33cd29131d15500fd1d6a36552875",
+    "mailGunDomain": "karmasoc.com",
+    "jwtSecret": "instantkarmasgonnagetyou",
+    "googleMapKey": "AIzaSyDmLkfClXRna7wF1DcmDEb9PYFyYG6qzrE",
+    "googlePlacesAPIKey": "AIzaSyAEBkuiXAlXv3J3C9-KKeyy95OyGmgO004",
+    "OSMApiKey": "",
+    "giphySearchKey": "dc6zaTOxFJmzC",
+    "forecast": "71d0a2fe37874c9ea8fc8bb795709883",
+    "redisCloudUrl": "redis://rediscloud:nBAju53AEHFMQ8r7@pub-redis-13992.us-east-1-4.3.ec2.garantiadata.com:13992",
+    "bitmovinKey": "2e166a74-2516-4b7f-95cd-fcc6ca1a33c9"
+}

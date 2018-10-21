@@ -1,0 +1,9 @@
+.*
+node_modules/
+build/
+.env
+build/
+typings/
+logs/
+.idea
+.vscode

@@ -1,0 +1,13 @@
+version: '2'
+services:
+# posts service
+   karmasoc-posts:
+        image: "karmasocio/karmasoc-posts"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocposts.k8
+        hostname: karmasoc-posts
+        ports:
+          - "44002:44002"
+        environment:
+            FILELOGLEVEL: error

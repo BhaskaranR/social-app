@@ -1,0 +1,87 @@
+sudo: true
+group: deprecated-2017Q2
+
+services:  
+    - docker
+
+env:  
+    global:
+        - DOCKER_VERSION=1.11.2-0~trusty
+        - DOCKER_COMPOSE_VERSION=1.8.0
+        - IMAGE_NAME=karmasoc-web-server
+        - CLUSTER=karmasoc
+        - TASK_DEFINITION=web
+        - SERVICE=karmasoc-web-server
+        - REMOTE_IMAGE_URL=karmasocio/karmasoc-web-server
+        - DOCKER_FILE=Dockerfile.karmasocwebserver
+before_install:  
+    # list docker-engine versions
+    - apt-cache madison docker-engine
+    - sudo apt-get install jq
+
+    # upgrade docker-engine to specific version
+    - sudo apt-get -o Dpkg::Options::="--force-confnew" install --force-yes docker-engine=${DOCKER_VERSION}
+
+    # reinstall docker-compose at specific version
+    - sudo rm -f /usr/local/bin/docker-compose
+    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+    - chmod +x docker-compose
+    - sudo mv docker-compose /usr/local/bin
+    - git clone https://$GIT_USER:$GIT_KEY@github.com/KarmaSoc/setup.git
+    - mv setup/process.json .
+    - mv setup/config .
+    - mv setup/bin/docker_push.sh .
+    - chmod +x docker_push.sh
+    - rm -rf setup
+
+before_script:
+
+script:  
+    - docker build --no-cache=true -f $DOCKER_FILE -t $REMOTE_IMAGE_URL .
+
+after_success:
+   # comment
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - ./docker_push.sh
+
+before_deploy:
+  - zip -r karmasoc-web-server-archive.zip deploy-dev-start.sh deploy-dev-stop.sh docker-compose-dev.yml appspec.yml || true
+  - mkdir -p "karmasoc-web-server-deploy"
+  - mv karmasoc-web-server-archive.zip karmasoc-web-server-deploy/karmasoc-web-server-archive.zip || true
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    local_dir: karmasoc-web-server-deploy
+    bucket: karmasoc-dev-deployment
+    region: us-east-1
+    skip_cleanup: true
+    acl: public_read
+    detect_encoding: true
+    on:
+      repo: KarmaSoc/karmasoc-web-server
+      all_branches: false
+      branch: master
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: karmasoc-dev-deployment
+    key: karmasoc-web-server-archive.zip
+    bundle_type: zip
+    application: karmasoc-web-server
+    deployment_group: karmasoc
+    region: us-east-1
+    on:
+      repo: KarmaSoc/karmasoc-web-server
+      all_branches: false
+      branch: master
+after_deploy:
+  - echo "Performing after deploy procedures....."
+notifications:
+  email:
+    recipients:
+      - sasisugumar@gmail.com
+  slack: karmasoc:umEs13Hsc8Og49zoSd8mjonk
+    
+

@@ -1,0 +1,62 @@
+{
+  "name": "karmasoc-user",
+  "version": "1.0.0",
+  "description": "microservice user",
+  "private": "true",
+  "config": {
+    "unsafe-perm": true
+  },
+  "scripts": {
+    "start": "gulp nodemon",
+    "typings": "typings",
+    "build": "gulp build",
+    "postinstall": "npm run typings -- install",
+    "test": "ava",
+    "documentation": "documentation index.js -o docs/ -f html -g",
+    "gendocs": "./generate_docs.sh",
+    "validate": "npm ls",
+    "lint": "jshint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karmasoc/karmasoc-user.git"
+  },
+  "author": "Bhaskaran",
+  "dependencies": {
+    "bcrypt": "^0.8.6",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
+    "bson-objectid": "^1.1.5",
+    "bunyan": "^1.8.12",
+    "config": "^1.20.4",
+    "joi": "^8.0.5",
+    "karmasoc-util": "1.6.0",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.1.16",
+    "pmx": "^0.6.2",
+    "seneca": "3.3.0",
+    "seneca-amqp-transport": "2.1.0",
+    "seneca-fire-and-forget": "^1.0.0",
+    "typings": "^1.0.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-help": "^1.6.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.1.3",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.1",
+    "gulp-typescript": "^2.8.3",
+    "precommit-hook": "^3.0.0",
+    "proxyquire": "^1.7.7",
+    "tslint": "^3.5.0",
+    "typescript": "^1.7.3"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+    "name": "karmasoc-feeds",
+    "version": "1.3.0",
+    "description": "KS feeds",
+    "main": "index.js",
+    "scripts": {
+        "tsc": "tsc",
+        "build": "npm prune && npm install && tsc",
+        "watch": "tsc -w",
+        "prestart": "node ./setup.js",
+        "start": "tsc && concurrently --kill-others \"tsc -w\" \"nodemon --inspect ./dist/httpserver.js  --port 9999\"",
+        "start:seneca": "tsc && concurrently --kill-others \"tsc -w\" \"nodemon ./dist/server.js\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server": "^0.3.3",
+        "bluebird": "^3.4.7",
+        "boom": "^4.2.0",
+        "config": "^1.21.0",
+        "dataloader": "^1.2.0",
+        "graphql": "^0.7.2",
+        "graphql-server-hapi": "^0.4.3",
+        "graphql-subscriptions": "^0.2.0",
+        "graphql-tools": "^0.8.0",
+        "hapi": "^15.1.1",
+        "hoek": "^4.1.0",
+        "karmasoc-util": "^1.5.4",
+        "lodash": "^4.17.4",
+        "mongodb": "^2.2.11",
+        "seneca": "3.3.0",
+        "seneca-amqp-transport": "2.1.0",
+        "source-map-support": "^0.4.3",
+        "yargs": "^6.4.0"
+    },
+    "devDependencies": {
+        "@types/cookies": "^0.6.0",
+        "@types/hapi": "^13.0.36",
+        "@types/lodash": "^4.14.43",
+        "@types/mongodb": "^2.1.33",
+        "@types/seneca": "^2.1.5",
+        "concurrently": "^3.1.0",
+        "lnk": "^1.0.1",
+        "nodemon": "^1.11.0",
+        "typed-graphql": "^1.0.2",
+        "typescript": "^2.1.6"
+    }
+}

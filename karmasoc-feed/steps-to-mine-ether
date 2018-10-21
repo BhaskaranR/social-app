@@ -1,0 +1,12 @@
+geth --datadir ~/eth-dev/ --networkid 1337 --verbosity 6 --ipcdisable --rpc --port 30301 --rpcport 8545 --rpcaddr ec2-34-229-10-250.compute-1.amazonaws.com console 2 --etherbase '0x4566b2248ef2e7808a95afbb4775f0d87d6c3299' >> ~/eth-dev/eth.log
+
+
+geth --datadir ~/eth-dev/ --networkid 1337 --verbosity 6 --ipcdisable --rpc --port 30301 --rpcport 8545 --rpcaddr ec2-34-229-10-250.compute-1.amazonaws.com console 2 >> ~/eth-dev/eth.log
+
+geth --datadir="/eth-dev" -verbosity 6 --ipcdisable --port 30301 --rpcport 8101 console 2>> ~/eth-dev/eth.log
+
+geth --datadir ~/eth-dev --networkid 1337 -verbosity 6 --ipcdisable --rpc --port 30301 --rpcport 8545 --rpcaddr 34.229.10.250 console 2>> ~/eth-dev/eth.log
+
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x941f1f0b08757457be0b52d83a1e3e566473ed61", "latest"],"id":1}' http://ec2-34-229-10-250.compute-1.amazonaws.com:8545
+
+

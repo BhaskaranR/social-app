@@ -1,0 +1,12 @@
+version: '2'
+services:
+   karmasoc-feed:
+        image: "eurosasi/karmasoc-feed"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocfeed
+        hostname: karmasoc-feed
+        ports:
+          - "8200:8200"
+        environment:
+            FILELOGLEVEL: error

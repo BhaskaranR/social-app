@@ -1,0 +1,20 @@
+# karmasoc-user
+FROM node:7.10.0
+
+# Create app directory
+RUN mkdir -p /usr/src/app/ks-business
+RUN mkdir -p /usr/src/app/ks-business/config
+RUN mkdir -p /usr/src/app/ks-business/logs
+
+COPY ./process.json /usr/src/app/ks-business
+COPY ./config /usr/src/app/ks-business/config
+COPY ./ks-business /usr/src/app/ks-business
+
+WORKDIR /usr/src/app/ks-business
+
+RUN npm install pm2 -g
+RUN npm install --unsafe-perm=true
+
+EXPOSE 44006
+
+CMD pm2 start --no-daemon  process.json --only ks-business --env docker

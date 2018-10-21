@@ -1,0 +1,41 @@
+{
+  "env": {
+      "log": {
+        "pathFileLogFile": "PATHFILELOGFILE",
+        "fileLogLevel": "FILELOGLEVEL",
+        "pathLogFileError": "PATHLOGFILEERROR"
+      },
+      "host":{
+        "karmasoc-mediaserve": "MEDIASERVE_HOST"
+      },
+      "port": {
+        "karmasoc-web-server":  "WEBSERVICE_PORT",
+        "karmasoc-user": "USER_PORT",
+        "karmasoc-posts": "POSTS_PORT",
+        "karmasoc-email": "EMAIL_PORT",
+        "karmasoc-mediaserve": "MEDIASERVE_PORT"
+      }
+  },
+  "db": {
+    "karmasoc-user": {
+      "dbcon": "MONGODB_CON"
+    },
+    "karmasoc-posts":{
+      "dbHost": "MONGODB_POST_HOST",
+      "dbPort":"MONGODB_POST_PORT",
+      "dbName":"posts"
+    },
+    "karamsoc-mediaserve":{
+      "dbHost": "MONGODB_MEDIASERVE_HOST",
+      "dbPort":"MONGODB_MEDIASERVE_PORT"
+    }
+  },
+  "rabbitmq": {
+    "host": "RABBIT_MQ_PORT_5672_TCP_ADDR",
+    "port": "RABBIT_MQ_PORT_5672_TCP_PORT",
+    "username": "RABBIT_MQ_USER",
+    "password": "RABBIT_MQ_PASSWORD"
+  },
+  "jwtSecret": "JWTSECRET",
+  "redisCloudUrl": "REDISCLOUDURL"
+}

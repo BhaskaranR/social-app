@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/deploy/karmasoc/karamsoc-web-server
+hooks:
+  ApplicationStart:
+    - location: deploy-dev-start.sh
+      timeout: 3600
+      runas: root
+  ApplicationStop:
+    - location: deploy-dev-stop.sh
+      timeout: 300
+      runas: root

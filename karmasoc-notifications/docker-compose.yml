@@ -1,0 +1,12 @@
+version: '2'
+services:
+   karmasoc-feed-posts:
+        image: "karmasoc/karmasoc-notification"
+        build:
+            context: .
+            dockerfile: Dockerfile.notification
+        restart: always
+        ports:
+          - "44001"
+        environment:
+            FILELOGLEVEL: error

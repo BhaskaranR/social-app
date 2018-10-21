@@ -1,0 +1,25 @@
+# karmasoc-web-server
+FROM node:8.0.0
+
+ARG WORKSPACE=/usr/src/app/karmasoc-web-server
+
+# Create app directory
+RUN mkdir -p $WORKSPACE
+RUN mkdir -p $WORKSPACE/config
+RUN mkdir -p $WORKSPACE/logs
+
+COPY ./process.json $WORKSPACE
+COPY ./config-kube $WORKSPACE/config
+COPY ./karmasoc-firebase-adminsdk.json $WORKSPACE/karmasoc-firebase-adminsdk.json
+
+COPY . $WORKSPACE
+
+WORKDIR $WORKSPACE
+
+RUN npm install pm2 -g
+RUN npm install --unsafe-perm=true
+RUN npm run build
+
+EXPOSE 8200
+
+CMD pm2 start --no-daemon  process.json --only karmasoc-web-server --env docker

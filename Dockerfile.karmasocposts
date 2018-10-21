@@ -1,0 +1,26 @@
+# karmasoc-user
+FROM node:8.0.0
+
+ARG WORKSPACE=/usr/src/app/karmasoc-posts
+
+# Create app directory
+RUN mkdir -p $WORKSPACE
+RUN mkdir -p $WORKSPACE/config
+RUN mkdir -p $WORKSPACE/logs
+
+COPY ./process.json $WORKSPACE
+COPY ./config $WORKSPACE/config
+COPY ./karmasoc-posts $WORKSPACE
+
+WORKDIR $WORKSPACE
+
+RUN npm install
+RUN npm run build
+
+EXPOSE 44002
+
+#CMD node ./dist/index.js
+
+CMD ["node","./dist/src/index.js"]
+
+#CMD pm2 start --no-daemon  process.json --only karmasoc-posts --env docker

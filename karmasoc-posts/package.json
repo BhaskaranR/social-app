@@ -1,0 +1,45 @@
+{
+    "name": "karmasoc-posts",
+    "version": "1.0.0",
+    "description": "microservice for posts",
+    "main": "index.js",
+    "scripts": {
+        "tsc": "tsc",
+        "build": "tsc",
+        "watch": "tsc -w",
+        "prestart": "node ./setup.js",
+        "start": "tsc && concurrently --kill-others \"tsc -w\" \"nodemon ./dist/index.js\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/karmasoc/karmasoc-posts.git"
+    },
+    "author": "BhaskaranR",
+    "license": "MIT",
+    "dependencies": {
+        "bitcodin": "^0.7.0",
+        "bluebird": "^3.5.0",
+        "bunyan": "^1.8.12",
+        "config": "^1.20.4",
+        "hoek": "^4.0.0",
+        "joi": "^8.0.5",
+        "karmasoc-util": "1.6.0",
+        "moment": "^2.12.0",
+        "mongodb": "^2.1.16",
+        "seneca": "3.3.0",
+        "seneca-amqp-transport": "2.1.0",
+        "seneca-fire-and-forget": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/bluebird": "^3.5.11",
+        "@types/config": "0.0.32",
+        "@types/hoek": "^4.1.3",
+        "@types/joi": "^10.4.2",
+        "@types/mongodb": "^2.1.33",
+        "@types/promise": "^7.1.30",
+        "@types/seneca": "^2.1.5",
+        "concurrently": "^3.1.0",
+        "typescript": "^2.1.6"
+    }
+}

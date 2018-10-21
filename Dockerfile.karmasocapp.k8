@@ -1,0 +1,20 @@
+# karmasoc-app
+FROM node:6.8.0
+
+# Create app directory
+RUN mkdir -p /usr/src/app/karmasoc-app 
+RUN mkdir -p /usr/src/app/karmasoc-app/config
+RUN mkdir -p /usr/src/app/karmasoc-app/logs 
+
+
+COPY ./process.json /usr/src/app/karmasoc-app 
+COPY ./config-kube /usr/src/app/karmasoc-app/config 
+COPY ./karmasoc-app /usr/src/app/karmasoc-app
+
+WORKDIR /usr/src/app/karmasoc-app
+
+RUN npm install grunt -g && npm install -g bower && bower install --allow-root && npm install
+
+EXPOSE 9000
+
+CMD grunt serve --force

@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "lib": ["es6", "es2017", "dom"],
+        "noLib": false,
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "types" : [ "node",  "core-js" ],
+        "typeRoots": [
+          "../node_modules/@types"
+        ]
+    },
+    "exclude": [
+        "./node_modules",
+        "build"
+    ]
+}

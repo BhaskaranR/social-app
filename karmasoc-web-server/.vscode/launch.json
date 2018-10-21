@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {  "name": "webserver",
+            "type": "node",
+            "request": "launch",
+            "args": ["${workspaceFolder}/src/server.ts"],
+            "runtimeArgs": ["-r", "${workspaceFolder}/node_modules/ts-node/register"],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

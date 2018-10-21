@@ -1,0 +1,22 @@
+# karmasoc-user
+FROM node:7.10.0
+
+# Create app directory
+RUN mkdir -p /usr/src/app/karmasoc-user
+RUN mkdir -p /usr/src/app/karmasoc-user/config
+RUN mkdir -p /usr/src/app/karmasoc-user/logs
+
+COPY ./process.json /usr/src/app/karmasoc-user
+COPY ./config-kube /usr/src/app/karmasoc-user/config
+COPY ./karmasoc-user /usr/src/app/karmasoc-user
+
+WORKDIR /usr/src/app/karmasoc-user
+
+RUN npm install pm2 -g
+RUN npm install --unsafe-perm=true
+RUN npm run build
+
+EXPOSE 44001
+
+#CMD node ./build/index.js
+CMD pm2 start --no-daemon  process.json --only karmasoc-user --env docker

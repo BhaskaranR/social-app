@@ -1,0 +1,14 @@
+version: '2'
+services:
+#karmasoc-web-server
+   karmasoc-web-server:
+        image: "karmasocio/karmasoc-web-server"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocwebserver
+        restart: always
+        hostname: karmasoc-web-server
+        ports:
+          - "8200:8200"
+        environment:
+            FILELOGLEVEL: error

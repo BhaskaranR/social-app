@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://tedgoas.github.io/Cerberus/cerberus-fluid.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">window["_gaUserPrefs"] = {
+    ioo: function () {
+        return true;
+    }
+}</script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 9 - 26 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+    <style>
+        * {
+            font-family: sans-serif !important;
+        }
+    </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset -->
+    <style type="text/css">
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        body {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What is does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            Margin: 0 auto !important;
+        }
+
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* What it does: Overrides styles added when Yahoo's auto-senses a link. */
+        .yshortcuts a {
+            border-bottom: none !important;
+        }
+
+        /* What it does: A work-around for iOS meddling in triggered links. */
+        .mobile-link--footer a,
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: underline !important;
+        }
+
+    </style>
+
+    <!-- Progressive Enhancements -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
+        }
+
+    </style>
+
+    <style type="text/css"></style>
+    <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+    .en-markup-crop-options {
+        top: 18px !important;
+        left: 50% !important;
+        margin-left: -100px !important;
+        width: 200px !important;
+        border: 2px rgba(255, 255, 255, .38) solid !important;
+        border-radius: 4px !important;
+    }
+
+    .en-markup-crop-options div div:first-of-type {
+        margin-left: 0px !important;
+    }
+    </style>
+</head>
+<body width="100%" height="100%" bgcolor="#222222" style="Margin: 0;">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:0;max-width:600px" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" bgcolor="#f8f9fa" style="background:#f8f9fa;border-bottom-color:#2ec866;border-bottom-style:solid;border-bottom-width:15px;border-top-width:0" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                        <tr>
+                            <td style="margin-bottom:10px" valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" style="color:#ffffff;font-family:Helvetica;font-size:11px;line-height:125%;padding:9px 18px;text-align:center" valign="top"><img src="" class="CToWUd"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#ffffff" style="background:#ffffff;border-bottom-width:0;border-top-width:0" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                        <tr>
+                            <td valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" valign="center" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="left" style="color:#606060;font-family:Verdana,Geneva,sans-serif;font-size:15px;line-height:125%;padding:18px;text-align:left" valign="top">
+                                                                <div align="center" style="text-align:center"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="color:#2ec866"><span style="font-size:20px">Confirm your Email</span></span>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td style="min-width:100%;padding:2px">
+                                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-top-color:#eaeaea;border-top-style:solid;border-top-width:2px;min-width:100%" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                                    <tbody>
+                                                        <tr style="font-family:arial,helvetica,sans-serif;font-size:15px">
+                                                            <td align="left" style="color:#606060;font-family:Verdana,Geneva,sans-serif;font-size:15px;line-height:125%;padding:9px 18px;text-align:left" valign="top">
+                                                                <p><span style="font-family:arial,helvetica,sans-serif">Hi <%= name %>,</span></p>
+
+                                                                <p><span style="font-family:arial,helvetica,sans-serif">Thanks for signing up with Karmasoc.com </p>
+
+														
+
+															<p><span style="font-family:arial,helvetica,sans-serif">Please confirm your email to login</span></p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;float:center">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" style="padding:18px" valign="top">
+                                                <table bgcolor="#2EC866" border="0" cellpadding="0" cellspacing="0" style="background:#2ec866;border-collapse:separate!important;border-radius:3px">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" style="font-family:Arial;font-size:16px;padding:15px" valign="middle"><a href="<%= activationLink %>" style="color:#ffffff;display:block;font-weight:bold;letter-spacing:normal;line-height:100%;text-align:center;text-decoration:none;word-wrap:break-word" target="_blank"
+                                                                    data-saferedirecturl="">Confirm Email</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="left" style="color:#606060;font-family:Verdana,Geneva,sans-serif;font-size:15px;line-height:125%;padding:9px 18px;text-align:left" valign="top">
+                                                                <p><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Best Regards,<br>
+															KarmaSoc Team </span></p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#FFFFFF" style="background:#ffffff;border-bottom-width:0;border-top-width:0" valign="top">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                        <tr>
+                            <td align="center" style="display:inline-block;text-align:center" valign="top">
+                                <div style="display:inline-block;vertical-align:top;width:197px">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;max-width:197px" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td valign="top">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div style="display:inline-block;vertical-align:top;width:197px">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;max-width:197px" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td valign="top">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div style="display:inline-block;vertical-align:top;width:197px">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;max-width:197px" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" valign="top">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#eff1f3" style="background:#eff1f3;border-bottom-width:0;border-top-width:0" valign="top">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                        <tr>
+                            <td valign="top">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#f8f9fa" style="background:#f8f9fa;border-bottom-width:0;border-top-width:0" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                        <tr>
+                            <td valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;min-width:100%" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" style="color:#000000;font-family:Verdana,Geneva,sans-serif;font-size:11px;line-height:125%;padding:9px 18px;text-align:center" valign="top">
+                                                                <p><br>
+                                                                    <span style="color:#808080"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">If you don't want to receive these mails, from KarmaSoc, please <a href="" style="color:#606060;font-weight:normal;text-decoration:underline;word-wrap:break-word" target="_blank" data-saferedirecturl="">unsubscribe</a>.</span></span><br>
+                                                                    <span style="color:#808080"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Copyright � 2016 KarmaSoc LLC, All rights reserved.</span></span>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

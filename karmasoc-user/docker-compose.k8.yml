@@ -1,0 +1,13 @@
+version: '2'
+services:
+# user servic
+   karmasoc-user:
+        image: "karmasocio/karmasoc-user"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocuser.k8
+        hostname: karmasoc-user
+        ports:
+          - "44001:44001"
+        environment:
+            FILELOGLEVEL: error

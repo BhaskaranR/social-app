@@ -1,0 +1,123 @@
+version: '2'
+services:
+#
+# Infrastructure
+#
+#   rabbitmq:
+#        image: "rabbitmq:3-management"
+#        ports:
+#        - "15672:15672"
+#   db_mongodb:
+#       image: "mongo"
+#       hostname: "mongodb"
+#       ports:
+#         - "27018:27018"
+# web server
+#    karmasoc-web-server:
+#         image: "me/karmasoc-web-server"
+#         build:
+#             context: .
+#             dockerfile: Dockerfile.karmasocwebserver
+#         hostname: karmasoc-web-server
+#         ports:
+#           - "8200:8200"
+#         environment:
+#             FILELOGLEVEL: error
+# media serve
+   karmasoc-mediaserve:
+        image: "karmasocio/karmasoc-mediaserve"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocmediaserve
+        hostname: karmasoc-mediaserve
+        restart: always
+        ports:
+          - "8300:8300"
+        environment:
+            FILELOGLEVEL: error
+# posts service
+   karmasoc-posts:
+        image: "karmasocio/karmasoc-posts"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocposts
+        hostname: karmasoc-posts
+        restart: always
+        ports:
+          - "44002:44002"
+        environment:
+            FILELOGLEVEL: error
+# user service
+   karmasoc-user:
+        image: "karmasocio/karmasoc-user"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocuser
+        hostname: karmasoc-user
+        restart: always
+        ports:
+          - "44001:44001"
+        environment:
+            FILELOGLEVEL: error
+# karmasoc - notifications
+   karmasoc-notification:
+        image: "karmasocio/karmasoc-notification"
+        build:
+            context: .
+            dockerfile: Dockerfile.notification
+        restart: always
+        ports:
+          - "44004:44004"
+        environment:
+            FILELOGLEVEL: error
+# karmasoc - web
+   karmasoc-web:
+        image: "karmasocio/karmasoc-web"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocweb
+        restart: always
+        ports:
+          - "4201:4201"
+        environment:
+            FILELOGLEVEL: error
+# karmasoc - bz
+   karmasoc-bz:
+        image: "karmasocio/karmasoc-bz"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocbz
+        ports:
+          - "44006:44006"
+        environment:
+            FILELOGLEVEL: error
+   karmasoc-emailer:
+        image: "karmasocio/karmasoc-emailer"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocemailer
+        hostname: karmasoc-emailer
+        ports:
+          - "44003:44003"
+        environment:
+            FILELOGLEVEL: error
+   karmasoc-app:
+        image: "karmasocio/karmasoc-app"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocapp
+        hostname: karmasoc-app
+        ports:
+          - "9000:9000"
+        environment:
+            FILELOGLEVEL: error
+   ks-reporter:
+        image: "karmasocio/ks-reporter"
+        build:
+            context: .
+            dockerfile: Dockerfile.karmasocreporter
+        hostname: karmasoc-reporter
+        ports:
+          - "44008:44008"
+        environment:
+            FILELOGLEVEL: error
